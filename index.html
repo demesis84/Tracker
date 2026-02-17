@@ -4,32 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrownTech Appliances Job Tracking System</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        header { background: #0066cc; color: white; padding: 10px; text-align: center; }
+        .container { width: 80%; margin: 0 auto; }
+        .button { padding: 10px 15px; color: white; background: #007bff; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
 </head>
 <body>
     <header>
-        <h1>CrownTech Appliances Job Tracking System</h1>
+        <h1>Welcome to the CrownTech Job Tracking System</h1>
     </header>
-    <main>
-        <section id="job-management">
-            <h2>Job Management</h2>
-            <p>Manage your job assignments and workflow efficiently.</p>
-        </section>
-        <section id="payment-tracking">
-            <h2>Payment Tracking</h2>
-            <p>Keep track of all customer payments easily.</p>
-        </section>
-        <section id="photo-uploads">
-            <h2>Photo Uploads</h2>
-            <p>Upload images for job verification and records.</p>
-        </section>
-        <section id="ocr-scanning">
-            <h2>OCR Scanning</h2>
-            <p>Utilize OCR technology for easy data entry and processing.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 CrownTech Appliances, Inc.</p>
-    </footer>
+    <div class="container">
+        <h2>Upload Job Details</h2>
+        <input type="file" id="fileUpload" />
+        <button class="button" id="uploadButton">Upload</button>
+
+        <h2>Job Management</h2>
+        <table id="jobTable" border="1">
+            <tr>
+                <th>Job ID</th>
+                <th>Job Description</th>
+                <th>Status</th>
+            </tr>
+        </table>
+
+        <h2>Payment Tracking</h2>
+        <form id="paymentForm">
+            <label for="jobId">Job ID:</label>
+            <input type="text" id="jobId" required />
+            <br />
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" required />
+            <br />
+            <button type="submit" class="button">Submit Payment</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('uploadButton').addEventListener('click', function() {
+            // Implement file upload logic
+        });
+
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Implement payment submission logic
+        });
+
+        // Additional JavaScript for OCR scanning and data persistence
+    </script>
 </body>
 </html>
